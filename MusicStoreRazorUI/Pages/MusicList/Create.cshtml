@@ -1,0 +1,49 @@
+﻿@page
+@model MusicStoreRazorUI.Pages.MusicList.CreateModel
+@{
+    
+}
+<br />
+<h2>Create New Music</h2>
+<br />
+<div class="border container" style="padding:30px;">
+    <form  asp-action="OnPost" method="post">
+        <div class="form-group row">
+            <div class="text-danger" ></div> @*Kontrollerini yapayım mı?*@
+            <div class="col-3">
+                <label> </label>
+            </div>
+            <div class="col-6">
+                <input class="form-control" />
+            </div>
+            <span class="text-danger" ></span> @*Hangi property ile alakalı hata versin*@
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label> </label>
+            </div>
+            <div class="col-6">
+                <input  class="form-control" />
+            </div>
+            <span class="text-danger" ></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label> </label>
+            </div>
+            <div class="col-6">
+                <input class="form-control" />
+            </div>
+            <span class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3 offset-3">
+                <input type="submit" value="Create" class="btn btn-primary form-control" />
+            </div>
+            <div class="col-3">
+                <a href="#" asp-page="Index" class="btn btn-success">Back to list</a>
+            </div>
+        </div>
+
+    </form>
+</div>

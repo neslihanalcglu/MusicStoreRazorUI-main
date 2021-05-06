@@ -1,0 +1,51 @@
+﻿@page
+@model MusicStoreRazorUI.Pages.MusicList.IndexModel
+@{
+}
+
+<br />
+<div class="container row p-0 m-0">
+    <div class="col-9">
+        <h2 class="text-info">Music List</h2>
+    </div>
+    <div class="col-3">
+        <a href="/MusicList/Create" class="btn btn-info form-control text-white">Create New Music</a>
+    </div>
+    <div class="col-12 border p-3 mt-3">
+        <form action="/" method="post">
+            @if (Model.Musics.Count()>0) //Modelden gelen musics in count u 0 ise
+            {
+            <table class="table table-striped border">
+                <tr class="table table-secondary">
+                    <th>
+                        <label asp-for="Musics.FirstOrDefault().Name"></label>
+                    </th>
+                    <th>
+                        @*<label asp-for="Musics.FirstOrDefault().Author"></label>*@
+                        @Html.DisplayNameFor(x => x.Musics.FirstOrDefault().Author)
+                    </th>
+                    <th>
+                        @*<label asp-for="Musics.FirstOrDefault().Author"></label>*@
+                        @Html.DisplayNameFor(x => x.Musics.FirstOrDefault().BarcodeNumber)
+                    </th>
+                    <th>
+                        <label>Operations</label>
+                    </th>
+                </tr>
+                @foreach (var mus in Model.Musics)
+                {
+            <tr>
+                <td>@Html.DisplayFor(x => mus.Name)</td>
+                <td>@Html.DisplayFor(x => mus.Author)</td>
+                <td>@Html.DisplayFor(x => mus.BarcodeNumber)</td>
+                <td>
+                    <a href="#" class="btn btn-outline-danger">Delete</a>
+                    <a href="#" class="btn btn-outline-success">Added</a>
+                </td>
+            </tr>
+                }
+            </table>
+            }
+        </form>
+    </div>
+</div>
